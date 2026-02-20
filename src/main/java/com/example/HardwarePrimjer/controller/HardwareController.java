@@ -11,18 +11,18 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("/web-shop")
+@RequestMapping("/hardware")
 @AllArgsConstructor
 public class HardwareController {
     private HardwareService hardwareService;
 
     @GetMapping
-    public List<HardwareDTO> getAllArticles() {
+    public List<HardwareDTO> getAllHardware() {
         return hardwareService.getAllHardware().stream().toList();
     }
 
-    @GetMapping("/{articleName}")
-    public List<HardwareDTO> filterArticlesByName(@PathVariable String hardwareName) {
+    @GetMapping("/{hardwareName}")
+    public List<HardwareDTO> filterHardwareByName(@PathVariable String hardwareName) {
         return hardwareService.getHardwareByName(hardwareName).stream().toList();
     }
 }
