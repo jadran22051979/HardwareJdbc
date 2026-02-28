@@ -42,16 +42,18 @@ public class MockHardwareRepository implements HardwareRepository {
     }
 
     @Override
-    public void saveNewHardware(Hardware hardware) {
-        hardwareList.add(hardware);
+    public Optional<Hardware> getHardwareById(Integer id) {
+        return hardwareList.stream()
+                .filter(a -> a.getId().equals(id))
+                .findFirst();
     }
 
     @Override
-    public Integer saveNewHardwarePost(Hardware hardware) {
+    public Hardware saveNewHardwarePost(Hardware hardware) {
         Integer generatedId = hardwareList.size();
         hardware.setId(hardwareList.size() + 1);
         hardwareList.add(hardware);
-        return generatedId;
+        return hardware;
     }
 
     @Override

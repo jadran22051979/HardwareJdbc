@@ -11,11 +11,11 @@ public interface HardwareService {
 
     List<HardwareDTO> getHardwareByName(String hardwareName);
 
-    void saveNewHardware(HardwareDTO hardware);
+//    void saveNewHardware(HardwareDTO hardware);
 
     List<HardwareDTO> filterByParameters(SearchHardwareDTO searchHardwareDTO);
 
-    Integer saveNewHardwarePost(HardwareDTO hardware);
+    HardwareDTO saveNewHardwarePost(HardwareDTO hardware);
 
     Optional<HardwareDTO> updateHardware(HardwareDTO hardwareDTO, Integer id);
 

@@ -7,7 +7,7 @@ import lombok.Getter;
 @AllArgsConstructor
 public enum Category {
 
-    CPU(1, "Central Processor", "New"),
+    CPU(1, "CPU", "New"),
     GPU(2, "GPU", "New and used"),
     MBO(3, "MBO", "New and used"),
     RAM(4, "RAM", "New and used"),

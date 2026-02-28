@@ -31,10 +31,10 @@ public class HardwareServiceImpl implements HardwareService {
                 .toList();
     }
 
-    @Override
-    public void saveNewHardware(HardwareDTO hardware) {
-        hardwareRepository.saveNewHardware(convertHardwareDtoToHardware(hardware));
-    }
+//    @Override
+//    public void saveNewHardware(HardwareDTO hardware) {
+//        hardwareRepository.saveNewHardware(convertHardwareDtoToHardware(hardware));
+//    }
 
     @Override
     public List<HardwareDTO> filterByParameters(SearchHardwareDTO searchhardwareDTO) {
@@ -73,9 +73,8 @@ public class HardwareServiceImpl implements HardwareService {
     }
 
     @Override
-    public Integer saveNewHardwarePost(HardwareDTO hardware) {
-        return hardwareRepository.saveNewHardwarePost(convertHardwareDtoToHardware(hardware));
-
+    public HardwareDTO saveNewHardwarePost(HardwareDTO hardware) {
+        return convertHardwareToHardwareDTO(hardwareRepository.saveNewHardwarePost(convertHardwareDtoToHardware(hardware)));
     }
 
     @Override

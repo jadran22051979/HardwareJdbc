@@ -11,11 +11,13 @@ public interface HardwareRepository {
 
     List<Hardware> getHardwareByName(String hardwareName);
 
-    void saveNewHardware(Hardware hardware);
+    Optional<Hardware> getHardwareById(Integer id);
+
+//    void saveNewHardware(Hardware hardware);
 
     List<Hardware> filterByParameters(SearchHardware searchHardware);
 
-    Integer saveNewHardwarePost(Hardware hardware);
+    Hardware saveNewHardwarePost(Hardware hardware);
 
     boolean deleteHardwareById(Integer id);
 
